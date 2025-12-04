@@ -8,7 +8,7 @@ int main() { // _start but in C (Program starts here)
     double real_femboys = 69.6969; // float but better (float so bad...)
     double *femboy = &real_femboys; // pointer to real_femboys
 
-    printf("double (float but better) real_femboys > %f\n", real_femboys); // read value
+    printf("double (float but better) real_femboys > %f\n", real_femboys); // read value '69.696900
     printf("real_femboys address: %p\n", (void*)femboy); // print pointer
 
     // float femboy = 69.6969;
