@@ -12,7 +12,7 @@ int main() { // _start but in C (Program starts here)
     printf("real_femboys address: %p\n", (void*)femboy); // print pointer
 
     // float femboy = 69.6969;
-    // reads as = 69.6966 because float is less precise
+    // reads as = 69.696600 because float is less precise
 
     return 0; // exit program
 }
