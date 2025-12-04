@@ -8,11 +8,11 @@ int main() { // _start but in C (Program starts here)
     double real_femboys = 69.6969; // float but better (float so bad...)
     double *femboy = &real_femboys; // pointer to real_femboys
 
-    printf("double (float but better) real_femboys > %f\n", real_femboys); // read value '69.696900
-    printf("real_femboys address: %p\n", (void*)femboy); // print pointer
+    printf("double (float but better) real_femboys > %f\n", real_femboys); // print value: 69.696900
+    printf("real_femboys address: %p\n", (void*)femboy); // print memory address
 
-    // float femboy = 69.6969;
-    // reads as = 69.696600 because float is less precise
+    // float femboy2 = 69.6969;
+    // reads as 69.696600 because float has less precision
 
     return 0; // exit program
 }
@@ -21,10 +21,10 @@ int main() { // _start but in C (Program starts here)
 // Linux:  gcc manual.c -o real_femboy_file
 // Windows (MinGW): gcc manual.c -o real_femboy_file.exe
 
-// We LOVE C!
+// We LOVE C! (+ femboys btw)
 // C — The Global Programming Language
 // Linux kernel — C
 // Windows kernel — C
 // Python interpreter — C
 // C++ = C but faster
-// minus of C — no high-level networking in the standard library
+// minus of C — no high-level networking in the standard library :(
