@@ -17,7 +17,7 @@ int main() { // _start but in C (Program starts here)
     char input[256];
     printf("enter random text: "); Prints text without NewLine For Prompt
     scanf("%[^\n]", input); // input (for %s (char) and perm (FOR VALUES USR %d!!!!))
-    printf("you entered: %s\n"); // prints your entered string
+    printf("you entered: %s\n", input); // prints your entered string
     if (strcmp(input, "youtext") == 0) { 
         // if perm == (is) "value" --> event
         printf("if worked!\n");
