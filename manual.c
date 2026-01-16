@@ -1,5 +1,5 @@
 #include <stdio.h> // Include standard library
-
+#include <string.h> // Include 'strcmp' library
 int main() { // _start but in C (Program starts here)
     int a = 69; // int = number
     printf("a: %d\n", a);
@@ -13,7 +13,19 @@ int main() { // _start but in C (Program starts here)
 
     // float femboy2 = 69.6969;
     // reads as 69.696600 because float has less precision
-
+    // 16.1.26: update :D
+    char input[256];
+    printf("enter random text: "); Prints text without NewLine For Prompt
+    scanf("%s[^\n]", input); // input for %s (char) and perm (FOR VALUES USR %d!!!!)
+    printf("you entered: %d\n"); // prints your entered string
+    if (strcmp(input, "youtext") == 0) { 
+        // if perm == (is) "value" --> event
+        printf("if worked!\n");
+    }
+    else if (strcmp(input, "youtext1") == 0 || strcmp(input, "youtext2") == 0) // DO NOT DO 2 IF ON 1 PERM!!! THIS IS -STABLE!!! + multi if example
+    {
+        printf("multi if worked!\n");
+    }
     return 0; // exit program
 }
 
