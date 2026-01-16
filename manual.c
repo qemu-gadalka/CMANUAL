@@ -5,7 +5,7 @@ int main() { // _start but in C (Program starts here)
     printf("a: %d\n", a);
 
     // char = one letter, const char* = unlimited letters (string)
-    double real_femboys = 69.6969; // float but better (float so bad...)
+    double real_femboys = 69.6969; // float but better (float is so bad...)
     double *femboy = &real_femboys; // pointer to real_femboys
 
     printf("double (float but better) real_femboys > %f\n", real_femboys); // print value: 69.696900
@@ -16,8 +16,8 @@ int main() { // _start but in C (Program starts here)
     // 16.1.26: update :D
     char input[256];
     printf("enter random text: "); Prints text without NewLine For Prompt
-    scanf("%s[^\n]", input); // input for %s (char) and perm (FOR VALUES USR %d!!!!)
-    printf("you entered: %d\n"); // prints your entered string
+    scanf("%[^\n]", input); // input (for %s (char) and perm (FOR VALUES USR %d!!!!))
+    printf("you entered: %s\n"); // prints your entered string
     if (strcmp(input, "youtext") == 0) { 
         // if perm == (is) "value" --> event
         printf("if worked!\n");
