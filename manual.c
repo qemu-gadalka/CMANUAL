@@ -38,9 +38,10 @@ int main() { // _start but in C (Program starts here)
     {
         printf("multi if worked!\n");
     }
-    example(); // join to perm
-    example2(1, 'a'); // peredacha dannix
-    return 0; // exit program
+    example();        // Call function without arguments
+    example2(1, 'a'); // Pass int and char arguments to the function
+
+    return 0; // exit program with code 0
 }
 
 // compile C file as:
