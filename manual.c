@@ -12,6 +12,11 @@ void example2(int exvoid, char exchar) { // class with exvoid, exchar
     return; // return from class
 }
 
+void massiveexample(void) {
+    char massivec[1024] = ['hello', 'friend', 'govnoeti'];
+    printf(massivec);
+}
+
 int main() { // _start but in C (Program starts here)
     int a = 69; // int = number
     printf("a: %d\n", a);
