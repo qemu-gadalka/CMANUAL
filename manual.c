@@ -38,8 +38,8 @@ int main() { // _start but in C (Program starts here)
     {
         printf("multi if worked!\n");
     }
-    example(); // vizvat perm
-    example2(1, "a"); // peredacha dannix
+    example(); // join to perm
+    example2(1, 'a'); // peredacha dannix
     return 0; // exit program
 }
 
