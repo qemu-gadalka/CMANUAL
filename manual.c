@@ -1,5 +1,17 @@
 #include <stdio.h> // Include standard library
 #include <string.h> // Include 'strcmp' library
+
+void example(void) { // class with nothing
+    printf("nothing\n");
+    return; // return from class
+}
+
+void example2(int exvoid, char exchar) { // class with exvoid, exchar
+    printf("exvoid --> %d\n", exvoid); // prints exvoid perm (int, %d)
+    printf("exchar --> %c\n", exchar); // prints exchar perm (char, %c)
+    return; // return from class
+}
+
 int main() { // _start but in C (Program starts here)
     int a = 69; // int = number
     printf("a: %d\n", a);
@@ -26,6 +38,8 @@ int main() { // _start but in C (Program starts here)
     {
         printf("multi if worked!\n");
     }
+    example(); // vizvat perm
+    example2(1, "a"); // peredacha dannix
     return 0; // exit program
 }
 
