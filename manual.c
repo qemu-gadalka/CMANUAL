@@ -13,10 +13,22 @@ void example2(int exvoid, char exchar) { // class with exvoid, exchar
 }
 
 void massiveexample(void) {
-    char massivec[1024] = ['hello', 'friend', 'govnoeti'];
-    printf(massivec);
-}
+    const char *massivec[] = {"hello", "friend", "govnoeti"}; // text massive
+    int choisem; // number choise
+    printf("Select 0, 1 or 2: "); 
+    // prompt
+    if (scanf("%d", &choisem) != 1) { // security 
+        printf("Bro, enter a NUMBER!\n");
+        return;
+    }
 
+    // security (or be 'segmentation fault')
+    if (choisem >= 0 && choisem <= 2) {
+        printf("Result: %s\n", massivec[choisem]); 
+    } else {
+        printf("Index %d is out of bounds! Are you trying to hack me?\n", choisem);
+    }
+}
 int main() { // _start but in C (Program starts here)
     int a = 69; // int = number
     printf("a: %d\n", a);
@@ -45,7 +57,7 @@ int main() { // _start but in C (Program starts here)
     }
     example();        // Call function without arguments
     example2(1, 'a'); // Pass int and char arguments to the function
-
+    massiveexample();
     return 0; // exit program with code 0
 }
 
