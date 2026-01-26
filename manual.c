@@ -6,13 +6,13 @@ void example(void) { // class with nothing
     return; // return from class
 }
 
-void example2(int exvoid, char exchar) { // class with exvoid, exchar
+void example2(int exvoid, char exchar) { // function with exvoid, exchar
     printf("exvoid --> %d\n", exvoid); // prints exvoid perm (int, %d)
     printf("exchar --> %c\n", exchar); // prints exchar perm (char, %c)
     return; // return from class
 }
 
-void massiveexample(void) {
+void massiveexample(void) { // function
     const char *massivec[] = {"hello", "friend", "govnoeti"}; // text massive
     int choisem; // number choise
     printf("Select 0, 1 or 2: "); 
