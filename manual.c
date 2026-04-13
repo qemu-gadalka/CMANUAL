@@ -1,5 +1,19 @@
 #include <stdio.h> // Include standard library
 #include <string.h> // Include 'strcmp' library
+#include <windows.h> // Include 'windows' library, only in mingw. for 'movecursor'.
+
+void movecursor(void) { // only for windows
+    int x_pos; // x pos int
+    int y_pos; // y pos int
+
+    printf("x pos: ");
+    scanf("%d\n", x_pos); // input for x_pos int
+
+    printf("y pos: ");
+    scanf("%d\n", y_pos); // input for y_pos int
+
+    SetCursorPos("%d %d", x_pos, y_pos); // set cursor pos
+}
 
 void example(void) { // class with nothing
     printf("nothing\n");
