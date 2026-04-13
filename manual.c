@@ -61,14 +61,6 @@ int main() { // _start but in C (Program starts here)
     return 0; // exit program with code 0
 }
 
-// compile C file as:
-// Linux:  gcc manual.c -o real_femboy_file
-// Windows (MinGW): gcc manual.c -o real_femboy_file.exe
-
-// We LOVE C! (+ femboys btw)
 // C — The Global Programming Language
 // Linux kernel — C
 // Windows kernel — C
-// Python interpreter — C
-// C++ = C but faster
-// minus of C — no high-level networking in the standard library :(
