@@ -72,6 +72,7 @@ int main() { // _start but in C (Program starts here)
     example();        // Call function without arguments
     example2(1, 'a'); // Pass int and char arguments to the function
     massiveexample();
+    movecursor();
     return 0; // exit program with code 0
 }
 
