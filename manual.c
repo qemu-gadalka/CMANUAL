@@ -1,81 +1,96 @@
 #include <stdio.h> // Include standard library
 #include <string.h> // Include 'strcmp' library
-#include <windows.h> // Include 'windows' library, only in mingw. for 'movecursor'.
 
-void movecursor(void) { // only for windows
-    int x_pos; // x pos int
-    int y_pos; // y pos int
+#ifdef _WIN32
+    #include <windows.h> // Include windows.h for Windows-specific API
+#else
+    #include <unistd.h> // Include unistd.h for Linux/Unix
+#endif
 
-    printf("x pos: ");
-    scanf("%d\n", x_pos); // input for x_pos int
+void movecursor(void) {
+    int x, y;
 
-    printf("y pos: ");
-    scanf("%d\n", y_pos); // input for y_pos int
+    printf("x pos (or col): ");
+    if (scanf("%d", &x) != 1) return;
 
-    SetCursorPos("%d %d", x_pos, y_pos); // set cursor pos
+    printf("y pos (or row): ");
+    if (scanf("%d", &y) != 1) return;
+
+#ifdef _WIN32
+    // Windows: Moves the actual mouse cursor on the screen
+    SetCursorPos(x, y); 
+#else
+    // Linux/Unix: Moves the text cursor in the terminal window
+    // \033[%d;%dH is the ANSI escape sequence for cursor position
+    printf("\033[%d;%dH", y, x);
+    fflush(stdout); 
+#endif
 }
 
-void example(void) { // class with nothing
+void example(void) { // function with nothing
     printf("nothing\n");
-    return; // return from class
+    return; // return from function
 }
 
 void example2(int exvoid, char exchar) { // function with exvoid, exchar
-    printf("exvoid --> %d\n", exvoid); // prints exvoid perm (int, %d)
-    printf("exchar --> %c\n", exchar); // prints exchar perm (char, %c)
-    return; // return from class
+    printf("exvoid --> %d\n", exvoid); // prints exvoid (int, %d)
+    printf("exchar --> %c\n", exchar); // prints exchar (char, %c)
+    return; 
 }
 
 void massiveexample(void) { // function
-    const char *massivec[] = {"hello", "friend", "govnoeti"}; // text massive
+    const char *massivec[] = {"hello", "friend"}; // text massive
     int choisem; // number choise
-    printf("Select 0, 1 or 2: "); 
-    // prompt
+    printf("Select 0, or 1: "); 
+    
     if (scanf("%d", &choisem) != 1) { // security 
         printf("Bro, enter a NUMBER!\n");
         return;
     }
 
-    // security (or be 'segmentation fault')
-    if (choisem >= 0 && choisem <= 2) {
+    // security check for array bounds
+    if (choisem >= 0 && choisem < 2) {
         printf("Result: %s\n", massivec[choisem]); 
     } else {
         printf("Index %d is out of bounds! Are you trying to hack me?\n", choisem);
     }
 }
-int main() { // _start but in C (Program starts here)
+
+int main() { // Program starts here
     int a = 69; // int = number
     printf("a: %d\n", a);
 
-    // char = one letter, const char* = unlimited letters (string)
-    double real_femboys = 69.6969; // float but better (float is so bad...)
-    double *femboy = &real_femboys; // pointer to real_femboys
+    double doubleman = 69.6969; // float but better
+    double *doublemanaddr = &doubleman; // pointer to doubleman
 
-    printf("double (float but better) real_femboys > %f\n", real_femboys); // print value: 69.696900
-    printf("real_femboys address: %p\n", (void*)femboy); // print memory address
+    printf("double doubleman > %f\n", doubleman); // print value
+    printf("doubleman address: %p\n", (void*)doublemanaddr); // print memory address
 
-    // float femboy2 = 69.6969;
-    // reads as 69.696600 because float has less precision
-    // 16.1.26: update :D
     char input[256];
-    printf("enter random text: "); Prints text without NewLine For Prompt
-    scanf("%[^\n]", input); // input (for %s (char) and perm (FOR VALUES USR %d!!!!))
-    printf("you entered: %s\n", input); // prints your entered string
+    printf("enter random text: ");
+    
+    // Clear buffer before using fgets
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    if (fgets(input, sizeof(input), stdin)) {
+        input[strcspn(input, "\n")] = 0; // remove newline character
+    }
+
+    printf("you entered: %s\n", input);
+    
     if (strcmp(input, "youtext") == 0) { 
-        // if perm == (is) "value" --> event
         printf("if worked!\n");
     }
-    else if (strcmp(input, "youtext1") == 0 || strcmp(input, "youtext2") == 0) // DO NOT DO 2 IF ON 1 PERM!!! THIS IS -STABLE!!! + multi if example
+    else if (strcmp(input, "youtext1") == 0 || strcmp(input, "youtext2") == 0) 
     {
         printf("multi if worked!\n");
     }
+
     example();        // Call function without arguments
-    example2(1, 'a'); // Pass int and char arguments to the function
+    example2(1, 'a'); // Pass int and char arguments
     massiveexample();
-    movecursor();
+    movecursor(); // Cross-platform cursor move
+
     return 0; // exit program with code 0
 }
-
-// C — The Global Programming Language
-// Linux kernel — C
-// Windows kernel — C
